@@ -1,0 +1,234 @@
+1 阐述循环的概念、分类及for循环的执行流程
+	循环的概念 : 在满足一定条件的情况下反复执行某部分代码
+	
+	循环的分類 :
+		1 for循环
+			for(初始化语句 ; 判断条件语句 ; 控制条件语句){
+				循环体语句;
+			}
+		
+		2 while循环
+			
+			初始化语句;
+			while(判断条件语句){
+				循环体语句;
+				控制条件语句;
+			}
+		
+		3 do...while循环
+		
+			初始化语句;
+			do{
+				循环体语句;
+				控制条件语句;
+			}while(判断条件语句);
+
+2 独立编写使用for循环打印5次HelloWorld的案例
+	
+	public static void main(String[] args){
+	
+		for(int i = 1 ; i <= 5 ; i++){
+			
+			System.out.println("HelloWorld");
+		}
+	}
+
+3 独立编写使用for循环打印1-5和5-1的案例
+
+	public static void main(String[] args){
+		for(int i = 1 ; i <= 5 ; i++){
+		
+			System.out.println(i);
+		}
+		
+		
+		for(int i = 5 ; i >= 1 ; i--){
+		
+			System.out.println(i);
+		}
+	
+	}
+
+3 独立编写使用for循求1-5和的案例
+
+	public static void main(String[] args){
+		// 求和变量
+		int sum = 0;
+		
+		for(int i = 1 ; i <= 5 ; i++){
+			sum += i;
+		}
+		
+		System.out.println("1-5的数据和为:"+sum);
+	
+	}
+
+4 独立编写使用for循求1-100偶数和的案例
+
+	public static void main(String[] args){
+		// 求和变量
+		int sum = 0;
+		
+		for(int i = 1 ; i <= 100 ; i++){
+			if(i % 2 == 0){
+				sum += i;
+			}
+		}
+		
+		System.out.println("1-5的数据和为:"+sum);
+	}
+
+5 独立编写使用for循求打印水仙花数及个数的案例
+
+	水仙花数 ： 1 三位数   2 每一位的立方和加在一起,等于这个数据本身
+
+	public static void main(String[] args){
+	
+		int count = 0;// 水仙花数的个数
+		
+		for(int i = 100 ; i < 1000 ; i++){
+			int ge  = i % 10;
+			int shi = i / 10 % 10;
+			int bai = i / 10 / 10 % 10;
+			
+			if((ge*ge*ge + shi*shi*shi + bai*bai*bai)==i){
+				count++;
+				System.out.println(i);
+			}
+		}
+		
+		System.out.println("水仙花数的个数为:"+count);
+	
+	}
+	
+6 阐述while循环的结构和执行流程
+
+	while循环格式:
+	
+	初始化语句;
+	while(判断条件语句){
+		循环体语句;
+		控制条件语句;
+	}
+
+
+7 独立编写使用while循求1-100的和的案例
+
+	public static void main(String[] args){
+		
+		// 定义求和变量
+		int sum = 0;
+		
+		int i = 1;
+		
+		while(i <= 100){
+			sum += i;
+			i++;
+		}
+		
+		System.out.println("1-100的数据和为"+sum);
+	
+	}
+
+8 阐述do-while循环的结构和执行流程
+
+	do...while循环格式
+
+	初始化语句;
+	do{
+		循环体语句;
+		控制条件语句;
+	}while(判断条件语句);
+
+9 阐述三种循环结构的区别并编写测试案例
+
+	A : for和while的区别 : for循环结束后,初始化语句不能使用, while循环结束后初始化可以继续使用
+	B : do...while和for,while区别  : do...while至少执行一次循环体 , for和while循环在判断条件语句满足时才会执行循环体
+
+10 独立编写使用循环嵌套打印4行5列星星的案例
+
+	public static void main(String[] args){
+	
+		for(int x = 1 ; x <= 4 ; x++){// 控制行
+		
+			for(int y = 1 ; y <= 5 ; y++){// 控制列
+			
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+	
+	}
+
+
+11 独立编写使用循环嵌套打印直角三角形的案例
+
+	public static void main(String[] args){
+	
+		for(int x = 1 ; x <= 4 ; x++){// 控制行
+		
+			for(int y = 1 ; y <= x ; y++){// 控制列
+			
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+	
+	}
+
+
+12 独立编写使用循环嵌套打印99乘法表的案例
+
+	public static void main(String[] args){
+	
+		for(int x = 1 ; x <= 9 ; x++){// 控制行
+		
+			for(int y = 1 ; y <= x ; y++){// 控制列
+			
+				System.out.print(y+"*"+x+"="+x*y+"\t");
+			}
+			
+			System.out.println();
+		}
+	
+	}
+
+
+13 阐述循环跳转语句break和continue的作用和用法并编写测试案例
+
+	break使用场景:	1 switch语句   2 循环结构语句 (for,while,do...while)
+	break的作用 : 结束switch语句或者结束循环结构语句
+	
+	continue使用场景:	1 循环结构语句 (for,while,do...while)
+	continue作用 : 跳过本次循环,进行下一次循环
+
+14 独立编写猜数字小游戏案例
+
+	public static void main(String[] args) {
+		// 创建随机数对象
+		Random r = new Random();
+
+		// 获取随机数[1-100]的数据
+		int num = r.nextInt(100) + 1;
+
+		// 创建键盘录入对象
+		Scanner sc = new Scanner(System.in);
+
+		while (true) {
+			// 录入数据
+			System.out.println("请输入你要猜的数据:");
+			int luckyNum = sc.nextInt();
+
+			if (luckyNum > num) {
+				System.out.println("你录入的数据" + luckyNum + "大了");
+			} else if (luckyNum < num) {
+				System.out.println("你录入的数据" + luckyNum + "小了");
+			} else {
+				System.out.println("恭喜你猜对了!");
+				break;
+			}
+		}
+	}
+
